@@ -1,24 +1,30 @@
 import logo from './logo.svg';
+import Header from './components/Header'
+import Menu from './components/Menu'
+import FAQ from './components/FAQ'
+import About from './components/About'
+import './index.css'
 import './App.css';
+import { Link } from 'react-dom'
+import { useState } from 'react';
 
 function App() {
+  const [activeComponent, setActiveComponent] = useState('menu'); // Default to 'menu'
+
+  // Function to handle changing the active component
+  const handleChangeComponent = (component) => {
+    setActiveComponent(component);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <>
+      <header>
+        <Header onChangeComponent={handleChangeComponent} />
       </header>
-    </div>
+      <section>
+        {activeComponent === 'FAQ' && <FAQ />}
+        {activeComponent === 'about' && <About />}
+      </section>
+    </>
   );
 }
 
