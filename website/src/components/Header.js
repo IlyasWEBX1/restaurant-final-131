@@ -97,9 +97,9 @@ const Header = ({ onChangeComponent }) => {
               {isMenuOpen && (
                 <div id='menu' className='fixed top-0 left-0 h-full w-64 bg-white shadow-lg p-4 transform transition-transform duration-300 ease-in-out z-40' style={{ transform: isMenuOpen ? 'translateX(0) translateY(13.6%)' : 'translateX(-100%) translateY(13.6%)' }}>
                   <ul>
-                    <li className='py-2 text-black hover:bg-green-500 hover:text-white cursor-pointer rounded-md active:bg-purple-500'>Home</li>
-                    <li className='py-2 text-black hover:bg-green-500 hover:text-white cursor-pointer rounded-md active:bg-purple-500'>About</li>
-                    <li className='py-2 text-black hover:bg-green-500 hover:text-white cursor-pointer rounded-md active:bg-purple-500'>Contact</li>
+                    <li className='py-2 text-black hover:bg-green-500 hover:text-white cursor-pointer rounded-md active:bg-purple-500' onClick={() => onChangeComponent('menu')}>Home</li>
+                    <li className='py-2 text-black hover:bg-green-500 hover:text-white cursor-pointer rounded-md active:bg-purple-500' onClick={() => onChangeComponent('about')}>About</li>
+                    <li className='py-2 text-black hover:bg-green-500 hover:text-white cursor-pointer rounded-md active:bg-purple-500' onClick={() => onChangeComponent('FAQ')}>Contact</li>
                   </ul>
                 </div>
               )}
@@ -121,111 +121,40 @@ const Header = ({ onChangeComponent }) => {
                   </form>
                 </div >
                 {/* Navbar */}
-                <div className='container bg-origin-box-border block relative'>
-                  <div className='flex flex-nowrap items-center justify-between h-full w-100 bg-green-900 rounded-t rounded-b'>
-                    <ul className="flex m-0 font-semibold text-sm list-none text-white w-full flex-row lt:flex-nowrap lt:items-center lt:relative lt:space-y-0 min-h-10 px-1.5 py-1.5">
-                      <li>
+                <div className="container bg-origin-box-border block relative">
+                  <div className="flex flex-wrap items-center justify-between h-full w-full bg-green-900 rounded-t rounded-b">
+                    <ul className="flex flex-wrap font-semibold text-sm list-none text-white w-full px-2 py-2 md:flex-row md:justify-between">
+                      {/* Menu Items */}
+                      <li className="w-full md:w-auto">
                         <a
-                          className="cursor-pointer
-                      flex
-                      items-center
-                      justify-center
-                      py-2
-                      px-20
-                      text-lg
-                      text-center
-                      text-white
-                      no-underline
-                      antialiased
-                      border-none
-                      font-semibold
-                      shadow-none
-                      leading-4
-                      whitespace-nowrap
-                      category-item
-                      hover:bg-green-800
-                      hover:rounded"
+                          className="block cursor-pointer py-2 px-4 text-lg text-center text-white no-underline antialiased border-none font-semibold hover:bg-green-800 hover:rounded"
                           href="#menu"
                           onClick={() => onChangeComponent('menu')}
                         >
                           Food Menu
                         </a>
                       </li>
-                      <li>
+                      <li className="w-full md:w-auto">
                         <a
-                          className="cursor-pointer
-                      flex
-                      items-center
-                      justify-center
-                      py-2
-                      px-20
-                      text-center
-                      text-white
-                      text-lg
-                      no-underline
-                      antialiased
-                      border-none
-                      font-semibold
-                      shadow-none
-                      leading-4
-                      whitespace-nowrap
-                      category-item
-                      hover:bg-green-800
-                      hover:rounded"
+                          className="block cursor-pointer py-2 px-4 text-lg text-center text-white no-underline antialiased border-none font-semibold hover:bg-green-800 hover:rounded"
                           href="#about"
                           onClick={() => onChangeComponent('about')}
                         >
                           About Us
                         </a>
                       </li>
-                      <li>
+                      <li className="w-full md:w-auto">
                         <a
-                          className="cursor-pointer
-                      flex
-                      items-center
-                      justify-center
-                      py-2
-                      px-20
-                      text-center
-                      text-white
-                      text-lg
-                      no-underline
-                      antialiased
-                      border-none
-                      font-semibold
-                      shadow-none
-                      leading-4
-                      whitespace-nowrap
-                      category-item
-                      hover:bg-green-800
-                      hover:rounded"
+                          className="block cursor-pointer py-2 px-4 text-lg text-center text-white no-underline antialiased border-none font-semibold hover:bg-green-800 hover:rounded"
                           href="#openings"
                           onClick={() => onChangeComponent('openings')}
                         >
                           Openings
                         </a>
                       </li>
-                      <li>
+                      <li className="w-full md:w-auto">
                         <a
-                          className="cursor-pointer
-                      flex
-                      items-center
-                      justify-center
-                      py-2
-                      px-20
-                      text-center
-                      text-white
-                      text-lg
-                      no-underline
-                      antialiased
-                      border-none
-                      font-semibold
-                      shadow-none
-                      leading-4
-                      whitespace-nowrap
-                      category-item
-                      hover:bg-green-800
-                      hover:rounded"
+                          className="block cursor-pointer py-2 px-4 text-lg text-center text-white no-underline antialiased border-none font-semibold hover:bg-green-800 hover:rounded"
                           href="#FAQ"
                           onClick={() => onChangeComponent('FAQ')}
                         >
