@@ -5,7 +5,32 @@
 
 
 /* font-family: 'Big Shoulders Text', cursive; */
+html,
+body {
+    height: 100%;
+    /* Ensure full height for the root elements */
+    margin: 0;
+    /* Remove default margins */
+}
 
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.flex-grow {
+    flex-grow: 1;
+}
+
+.min-h-screen {
+    min-height: 128vh;
+    /* Ensures the container spans at least the viewport height */
+}
+
+/* 
 .nav-flex-row {
     display: flex;
     flex-direction: row;
@@ -34,11 +59,11 @@
 .section-intro {
     height: 820px;
     /* background-image: url(img/petr-sevcovic-qE1jxYXiwOA-unsplash.jpg); */
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+/* background-size: cover;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
 }
 
 .section-intro h1 {
@@ -120,6 +145,7 @@ a.link-to-book:hover {
 .btn.btn-primary:hover {
     background-color: #747474;
 }
+
 .opening-time,
 .contact-adress {
     flex: 1;
@@ -200,3 +226,5 @@ a.link-to-book:hover {
     }
 
 }
+
+*/
