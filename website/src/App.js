@@ -7,30 +7,28 @@ import Footer from './components/Footer'
 import Hour from './components/Hour'
 import './index.css'
 import './App.css';
-import { Link } from 'react-dom'
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 function App() {
-
-  const [activeComponent, setActiveComponent] = useState('menu'); // Default to 'menu'
-
-  // Function to handle changing the active component
-  const handleChangeComponent = (component) => {
-    setActiveComponent(component);
-  };
   return (
-    <div className="min-h-screen flex flex-col">
-      <header>
-        <Header onChangeComponent={handleChangeComponent} />
-      </header>
-      <main id='td' className='bg-grey-550 flex-grow px-6 py-12'>
-        {activeComponent === 'menu' && <Menu />}
-        {activeComponent === 'FAQ' && <FAQ />}
-        {activeComponent === 'about' && <About />}
-        {activeComponent === 'openings' && <Hour />}
-      </main>
-      <Footer />
-    </div>
+    <Router>
+      <div className="min-h-screen flex flex-col">
+        <header>
+          <Header />
+        </header>
+        <main id='td' className='bg-grey-550 flex-grow px-6 py-12'>
+          <Routes>
+            {/* Define your routes here */}
+            <Route path="/" element={<Menu />} />
+            <Route path="/FAQ" element={<FAQ />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/openings" element={<Hour />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

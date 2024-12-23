@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import logo from '../logo.svg';
 import '../index.css';
+import { Link } from 'react-router-dom';
 
 const Header = ({ onChangeComponent }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -98,7 +99,7 @@ const Header = ({ onChangeComponent }) => {
                 <div id='menu' className='fixed top-0 left-0 h-full w-64 bg-white shadow-lg p-4 transform transition-transform duration-300 ease-in-out z-40' style={{ transform: isMenuOpen ? 'translateX(0) translateY(13.6%)' : 'translateX(-100%) translateY(13.6%)' }}>
                   <ul>
                     <li className='py-2 text-black hover:bg-green-500 hover:text-white cursor-pointer rounded-md active:bg-purple-500' onClick={() => onChangeComponent('menu')}>Home</li>
-                    <li className='py-2 text-black hover:bg-green-500 hover:text-white cursor-pointer rounded-md active:bg-purple-500' onClick={() => onChangeComponent('about')}>About</li>
+                    <li className='py-2 text-black hover:bg-green-500 hover:text-white cursor-pointer rounded-md active:bg-purple-500' >About</li>
                     <li className='py-2 text-black hover:bg-green-500 hover:text-white cursor-pointer rounded-md active:bg-purple-500' onClick={() => onChangeComponent('FAQ')}>Contact</li>
                   </ul>
                 </div>
@@ -128,37 +129,32 @@ const Header = ({ onChangeComponent }) => {
                       <li className="w-full md:w-auto">
                         <a
                           className="block cursor-pointer py-2 px-4 text-lg text-center text-white no-underline antialiased border-none font-semibold hover:bg-green-800 hover:rounded"
-                          href="#menu"
-                          onClick={() => onChangeComponent('menu')}
                         >
-                          Food Menu
+                          <Link to="/">Menu</Link>
                         </a>
                       </li>
                       <li className="w-full md:w-auto">
                         <a
                           className="block cursor-pointer py-2 px-4 text-lg text-center text-white no-underline antialiased border-none font-semibold hover:bg-green-800 hover:rounded"
-                          href="#about"
-                          onClick={() => onChangeComponent('about')}
+
                         >
-                          About Us
+                          <Link to="/about">About Us</Link>
                         </a>
                       </li>
                       <li className="w-full md:w-auto">
                         <a
                           className="block cursor-pointer py-2 px-4 text-lg text-center text-white no-underline antialiased border-none font-semibold hover:bg-green-800 hover:rounded"
-                          href="#openings"
-                          onClick={() => onChangeComponent('openings')}
+
+
                         >
-                          Openings
+                          <Link to="/openings">Hour</Link>
                         </a>
                       </li>
                       <li className="w-full md:w-auto">
                         <a
                           className="block cursor-pointer py-2 px-4 text-lg text-center text-white no-underline antialiased border-none font-semibold hover:bg-green-800 hover:rounded"
-                          href="#FAQ"
-                          onClick={() => onChangeComponent('FAQ')}
                         >
-                          FAQ
+                          <Link to="/FAQ">FAQ</Link>
                         </a>
                       </li>
                     </ul>
