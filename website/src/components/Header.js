@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import SearchBar from './SearchBar';
 import logo from '../logo.svg';
 import '../index.css';
 import { Link } from 'react-router-dom';
@@ -26,6 +27,8 @@ const Header = ({ onChangeComponent }) => {
     fetchProfile();
   }, []);
   const logo = profile.length > 0 ? profile[0].logo : null;
+
+
 
   return (
     <div className='page-container new-header'>
@@ -98,9 +101,10 @@ const Header = ({ onChangeComponent }) => {
               {isMenuOpen && (
                 <div id='menu' className='fixed top-0 left-0 h-full w-64 bg-white shadow-lg p-4 transform transition-transform duration-300 ease-in-out z-40' style={{ transform: isMenuOpen ? 'translateX(0) translateY(13.6%)' : 'translateX(-100%) translateY(13.6%)' }}>
                   <ul>
-                    <li className='py-2 text-black hover:bg-green-500 hover:text-white cursor-pointer rounded-md active:bg-purple-500' onClick={() => onChangeComponent('menu')}>Home</li>
-                    <li className='py-2 text-black hover:bg-green-500 hover:text-white cursor-pointer rounded-md active:bg-purple-500' >About</li>
-                    <li className='py-2 text-black hover:bg-green-500 hover:text-white cursor-pointer rounded-md active:bg-purple-500' onClick={() => onChangeComponent('FAQ')}>Contact</li>
+                    <li className='py-2 text-black hover:bg-green-500 hover:text-white cursor-pointer rounded-md active:bg-purple-500' ><Link to="/">Menu</Link></li>
+                    <li className='py-2 text-black hover:bg-green-500 hover:text-white cursor-pointer rounded-md active:bg-purple-500' ><Link to="/about">About Us</Link></li>
+                    <li className='py-2 text-black hover:bg-green-500 hover:text-white cursor-pointer rounded-md active:bg-purple-500' ><Link to="/openings">Schedule</Link></li>
+                    <li className='py-2 text-black hover:bg-green-500 hover:text-white cursor-pointer rounded-md active:bg-purple-500' ><Link to="/FAQ">FAQ</Link></li>
                   </ul>
                 </div>
               )}
@@ -109,22 +113,11 @@ const Header = ({ onChangeComponent }) => {
             </div>
             <div className='lt:hidden'>
               <div className="flex justify-between items-center h-10 md:h-12 gap-10" data-testid="search-input">
-                <div id='banner-search-group' className='box-border relative w-full flex justify-center items-center'>
-                  <form method='get' className='flex w-full' id='searchForm' role='search'>
-                    <div className='flex flex-nowrap h-10 w-64'>
-                      <div className='bg-white focus:border-blue-300 rounded border border-r-0 border-solid border-gray-400 box-border flex flex-nowrap items-center flex-auto text-sm leading-4 mb-0 focus:outline-none text-gray-800 align-middle w-48 transition ease-linear duration-200 lt:rounded-r-none'>
-                        <div className='awesomeplete'>
-                          <input type="text" name="searchval" id="searchval" data-testid="searchval" autocomplete="off" className="border-0 box-border text-base mb-0 focus:outline-none py-3 focus:placeholder-transparent w-64 h-full bg-transparent typeahead banner-search-input placeholder:text-gray-600 shadow-none max-h-[38px] pl-3 items-center" aria-label="Search: type a search term, and navigate through results with up and down arrows" placeholder="What are you looking for?" aria-expanded="false" aria-owns="awesomplete_list_2" role="combobox"></input>
-                        </div>
-                      </div>
-                      <button value="Search" className="text-white rounded-r border-0 box-border text-sm py-2.5 px-4-1/2 lt:flex lt:items-center cursor-pointer bg-blue-700 lt:hover:bg-blue-800 tracking-[.02em]" type="submit"><span className="sr-only">Search WebstaurantStore</span><svg aria-hidden="true" className="fill-white" width="40" height="19" viewBox="0 0 19 19" xmlns="http://www.w3.org/2000/svg"><path d="M14.2745 13.1548L17.6652 16.5447L16.545 17.6649L13.155 14.2742C11.8937 15.2853 10.3248 15.8353 8.70825 15.833C4.77525 15.833 1.58325 12.641 1.58325 8.70801C1.58325 4.77501 4.77525 1.58301 8.70825 1.58301C12.6413 1.58301 15.8333 4.77501 15.8333 8.70801C15.8356 10.3246 15.2856 11.8935 14.2745 13.1548ZM12.6864 12.5674C13.6911 11.5342 14.2522 10.1492 14.2499 8.70801C14.2499 5.64584 11.7696 3.16634 8.70825 3.16634C5.64609 3.16634 3.16659 5.64584 3.16659 8.70801C3.16659 11.7694 5.64609 14.2497 8.70825 14.2497C10.1494 14.2519 11.5344 13.6908 12.5676 12.6861L12.6864 12.5674Z"></path></svg></button>
-                    </div>
-                  </form>
-                </div >
+                <SearchBar />
                 {/* Navbar */}
                 <div className="container bg-origin-box-border block relative">
                   <div className="flex flex-wrap items-center justify-between h-full w-full bg-green-900 rounded-t rounded-b">
-                    <ul className="flex flex-wrap font-semibold text-sm list-none text-white w-full px-2 py-2 md:flex-row md:justify-between">
+                    <ul className="flex flex-wrap font-semibold text-sm list-none text-white w-full px-1.5 py-2 md:flex-row md:justify-between">
                       {/* Menu Items */}
                       <li className="w-full md:w-auto">
                         <a
@@ -135,7 +128,7 @@ const Header = ({ onChangeComponent }) => {
                       </li>
                       <li className="w-full md:w-auto">
                         <a
-                          className="block cursor-pointer py-2 px-4 text-lg text-center text-white no-underline antialiased border-none font-semibold hover:bg-green-800 hover:rounded"
+                          className="block cursor-pointer py-2 px-1 text-lg text-center text-white no-underline antialiased border-none font-semibold hover:bg-green-800 hover:rounded"
 
                         >
                           <Link to="/about">About Us</Link>
@@ -147,7 +140,7 @@ const Header = ({ onChangeComponent }) => {
 
 
                         >
-                          <Link to="/openings">Hour</Link>
+                          <Link to="/openings">Openings</Link>
                         </a>
                       </li>
                       <li className="w-full md:w-auto">

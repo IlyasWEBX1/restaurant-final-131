@@ -126,6 +126,10 @@ Error handling diterapkan untuk:
 - Mengoptimalkan panggilan API untuk kinerja yang lebih baik.
 - Menambahkan pengujian unit dan integrasi untuk frontend dan backend.
 
+## **6. Resources**
+- 1. ChatGPT 
+- 2. https://www.webstaurantstore.com/
+- 3. https://red-onion-restaurant-41dbe.web.app/
 ---
 
 Dokumentasi ini berfungsi sebagai referensi untuk pengembangan dan pemeliharaan website di masa depan. Dengan mengikuti langkah-langkah yang diuraikan, website dapat ditingkatkan dan diskalakan sesuai kebutuhan.
