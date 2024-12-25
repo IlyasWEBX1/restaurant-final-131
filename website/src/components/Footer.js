@@ -13,7 +13,7 @@ const Header = ({ onChangeComponent }) => {
     useEffect(() => {
         const fetchProfile = async () => {
             try {
-                const response = await fetch(`http://localhost:8000/api/profile/`);
+                const response = await fetch(`${process.env.REACT_APP_PUBLIC_API_URL}/api/profile/`);
                 const data = await response.json();
                 setProfile(data);
                 setLoading(false);

@@ -9,7 +9,7 @@ function OpeningHour() {
     useEffect(() => {
         const fetchOpeningHour = async () => {
             try {
-                const response = await fetch(`http://localhost:8000/api/opening-hour/`);
+                const response = await fetch(`${process.env.REACT_APP_PUBLIC_API_URL}/api/opening-hour/`);
                 const data = await response.json();
                 setOpeningHour(data);
             } catch (error) {

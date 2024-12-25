@@ -14,7 +14,7 @@ function Menu() {
   useEffect(() => {
     const fetchMenu = async () => {
       try {
-        const response = await fetch(`http://localhost:8000/api/menus/`);
+        const response = await fetch(`${process.env.REACT_APP_PUBLIC_API_URL}/api/menus/`);
         const data = await response.json();
         setMenu(data);
         setLoading(false); // Set loading to false after fetching data
@@ -29,7 +29,7 @@ function Menu() {
   useEffect(() => {
     const fetchCategoryList = async () => {
       try {
-        const response = await fetch(`http://localhost:8000/api/menus/categories/`);
+        const response = await fetch(`${process.env.REACT_APP_PUBLIC_API_URL}/api/menus/categories`);
         const data = await response.json();
         setCategoryList(data);
         setLoading(false); // Set loading to false after fetching data
