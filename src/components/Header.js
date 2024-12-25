@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import SearchBar from './SearchBar';
 import logo from '../logo.svg';
 import '../index.css';
 import { Link } from 'react-router-dom';
@@ -113,7 +112,6 @@ const Header = ({ onChangeComponent }) => {
             </div>
             <div className='lt:hidden'>
               <div className="flex justify-between items-center h-10 md:h-12 gap-10" data-testid="search-input">
-                <SearchBar />
                 {/* Navbar */}
                 <div className="container bg-origin-box-border block relative">
                   <div className="flex flex-wrap items-center justify-between h-full w-full bg-green-900 rounded-t rounded-b">
