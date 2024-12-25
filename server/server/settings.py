@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["restaurant-final-131.vercel.app",  # Production
     "localhost",                        # Local development
-    "127.0.0.1",    ]
+    "127.0.0.1","restaurant-final-131-production.up.railway.app", 'restaurant-final-131-production.up.railway.app',    ]
 
 
 # Application definition
